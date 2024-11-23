@@ -1,8 +1,9 @@
 import numpy as np
-import seaborn as sns
 import pandas as pd
-from matplotlib import pyplot as plt
-
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def create_scatter_plot(data):
     """
@@ -10,12 +11,25 @@ def create_scatter_plot(data):
 
     Parameters:
     data (DataFrame): A DataFrame containing 'x' and 'y' columns.
+
+    Returns:
+    Figure: Matplotlib Figure object containing the scatter plot.
     """
-    fig, _ = plt.subplots()
-    pass
+    sns.set(style="whitegrid")
+
+    fig, ax = plt.subplots()
+
+    sns.scatterplot(data=data, x='x', y='y', ax=ax)
+
+    ax.set_xlabel('X Variable')
+    ax.set_ylabel('Y Variable')
+    ax.set_title('Scatter Plot of X vs Y')
+
+    ax.grid(True)
+
+    fig.tight_layout()
+
     return fig
-
-
 
 # Example data
 data = pd.DataFrame({

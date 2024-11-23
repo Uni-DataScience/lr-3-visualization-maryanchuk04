@@ -5,7 +5,7 @@ _In order to demonstrate the completed plots, upload the image of the results to
 ### **Task 1: Importance of Data Visualization in Data Science and Analytics**
 
 Demonstrate the importance of data visualization by creating a simple bar chart to represent the frequency of categorical data.
-- **Details:** 
+- **Details:**
   - You will generate a dataset of categorical values ('A', 'B', 'C') using random sampling.
   - Use Matplotlib to plot a bar chart showing the frequency of each category.
 - **Requirements:**

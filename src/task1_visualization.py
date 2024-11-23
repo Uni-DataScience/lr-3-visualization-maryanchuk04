@@ -9,13 +9,23 @@ def plot_distribution(data):
 
     Parameters:
     data (array-like): An array of categorical data items.
+
+    Returns:
+    Figure: Matplotlib Figure object containing the plot.
     """
-    
-    fig, _ = plt.subplots()
-    pass
+    count = collections.Counter(data)
+    categories = list(count.keys())
+    counts = list(count.values())
+
+    fig, ax = plt.subplots()
+    ax.bar(categories, counts)
+
+    ax.set_xlabel('Category')
+    ax.set_ylabel('Count')
+    ax.set_title('Category Distribution')
+
     return fig
 
 
-# Example data
 data = np.random.choice(['A', 'B', 'C'], size=100)
 plot_distribution(data)
